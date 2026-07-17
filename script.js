@@ -7,21 +7,21 @@ const icon = themeBtn.querySelector('i');
 const savedTheme = localStorage.getItem('theme');
 
 // Apply saved theme on initial load
-if (savedTheme === 'dark') {
-    body.classList.replace('light-mode', 'dark-mode');
-    icon.classList.replace('fa-moon', 'fa-sun');
+if (savedTheme === 'light') {
+    body.classList.replace('dark-mode', 'light-mode');
+    icon.classList.replace('fa-sun', 'fa-moon');
 }
 
 // Toggle theme on button click
 themeBtn.addEventListener('click', () => {
-    if (body.classList.contains('light-mode')) {
-        body.classList.replace('light-mode', 'dark-mode');
-        icon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'dark');
-    } else {
+    if (body.classList.contains('dark-mode')) {
         body.classList.replace('dark-mode', 'light-mode');
         icon.classList.replace('fa-sun', 'fa-moon');
         localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.replace('light-mode', 'dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
     }
 });
 
